@@ -1,0 +1,13 @@
+{% extends "duralumin/dj-base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Dashboard" %}{% endblock %}
+{% block content %}
+
+<p>{% blocktrans %}Hello, {% endblocktrans %} {{ user.username }}!
+{% blocktrans %}Welcome to your dashboard?{% endblocktrans %}</p>
+
+<p>{% blocktrans %}Would you like to order a blimp?{% endblocktrans %}</p>
+
+<p> <a href="{% url 'auth_logout' %}">logout</a> </p>
+
+{% endblock %}
