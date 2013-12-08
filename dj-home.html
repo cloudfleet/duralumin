@@ -1,0 +1,12 @@
+{% extends "duralumin/dj-base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Home" %}{% endblock %}
+{% block content %}
+
+<p>{% blocktrans %}Hello cloudfleeters! Welcome to the landing page.
+Fancy, eh?{% endblocktrans %}</p>
+
+<p><a href="{% url 'dashboard' %}">{% blocktrans %}dashboard{% endblocktrans %}
+</a></p>
+
+{% endblock %}
