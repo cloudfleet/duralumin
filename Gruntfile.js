@@ -181,7 +181,12 @@ module.exports = function (grunt) {
         },
         useminPrepare: {
             options: {
-                dest: '<%= yeoman.dist %>'
+                dest: '<%= yeoman.dist %>',
+                // manually set steps without concat (needs grunt-django)
+                flow: {
+                    steps: { 'js': ['uglify'], 'css': ['cssmin'] },
+                    post: {}
+                }
             },
             html: '<%= yeoman.app %>/index.html'
         },
@@ -342,7 +347,8 @@ module.exports = function (grunt) {
         'uglify',
         'modernizr',
         'copy:dist',
-        'rev',
+        //needs grunt-django
+        //'rev',
         'usemin'
     ]);
 
