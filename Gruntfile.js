@@ -311,6 +311,20 @@ module.exports = function (grunt) {
             all: {
                 rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
+        },
+        buildcontrol: {
+            options: {
+                dir: '<%= yeoman.dist %>',
+                commit: true,
+                push: true,
+                message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+            },
+            production: {
+                options: {
+                    remote: 'git@github.com:cloudfleet/duralumin.git',
+                    branch: 'production'
+                }
+            }
         }
     });
 
@@ -350,6 +364,10 @@ module.exports = function (grunt) {
         //needs grunt-django
         //'rev',
         'usemin'
+    ]);
+
+    grunt.registerTask('publish', [
+        'buildcontrol:production'
     ]);
 
     grunt.registerTask('default', [
