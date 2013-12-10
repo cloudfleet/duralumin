@@ -23,20 +23,46 @@
         <![endif]-->
 
 
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>Modernizr</li>
-            <li>RequireJS</li>
-          </ul>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+                <h3 class="text-muted">Cloudfleet</h3>
+            </div>
+
+            <div class="jumbotron">
+                <h1>Welcome, captain!</h1>
+                <p class="lead">Become the captain of your data.</p>
+                <p><a class="btn btn-lg btn-success" href="#">Get started!</a></p>
+            </div>
+
+            <div class="row marketing">
+                <div class="col-lg-6">
+                    <h4>HTML5 Boilerplate</h4>
+                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
+
+                    <h4>Bootstrap</h4>
+                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
+
+                    <h4>Modernizr</h4>
+                    <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
+
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Made with ♥ and open source by the Cloudfleet team.</p>
+            </div>
+
         </div>
 
 
         <!-- build:js bower_components/jquery/jquery.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -51,7 +77,22 @@
         </script>
 
         <!-- build:js scripts/main.js -->
-        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
+        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
+        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
+        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
+        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
+        <script src="bower_components/sass-bootstrap/js/button.js"></script>
+        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
+        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
+        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
+        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
         <!-- endbuild -->
 </body>
 </html>

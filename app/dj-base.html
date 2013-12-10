@@ -25,11 +25,33 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                </ul>
+                <h3 class="text-muted">Cloudfleet</h3>
+            </div>
 
-        <div class="hero-unit">
-          <a href="/"><h1>Cloudfleet</h1></a>
-          {% block content %}{% endblock %}
+            <div class="jumbotron">
+                <h1>Welcome, captain!</h1>
+                <p class="lead">Become the captain of your data.</p>
+                <p><a class="btn btn-lg btn-success" href="#">Get started!</a></p>
+            </div>
+
+            <div class="row marketing">
+                <div class="col-lg-6">
+                  {% block content %}{% endblock %}
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Made with ♥ and open source by the Cloudfleet team.</p>
+            </div>
+
         </div>
+
 
 
         <script src="{% static 'duralumin/bower_components/jquery/jquery.js' %}"></script>
@@ -45,7 +67,9 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <script data-main="{% static 'duralumin/scripts/main' %}" src="{% static 'duralumin/bower_components/requirejs/require.js' %}"></script>
+        <script src="{% static 'duralumin/scripts/main.js' %}"></script>
+
+        <script src="{% static 'duralumin/scripts/plugins.js' %}"></script>
 
 </body>
 </html>
