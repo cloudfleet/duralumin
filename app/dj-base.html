@@ -32,11 +32,16 @@
         <div class="header">
           <ul class="nav nav-pills pull-right">
             <li{% if request.path == home %} class="active"{% endif %}>
-              <a href="/">Home</a>
+              <a href="{% url 'home' %}">Home</a>
             </li>
             <li{% if request.path == dashboard %} class="active"{% endif %}>
-              <a href="/dashboard">Dashboard</a>
+              <a href="{% url 'dashboard' %}">Dashboard</a>
             </li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'auth_logout' %}">Log out</a></li>
+            {% else %}
+            <li><a href="{% url 'auth_login' %}">Log in</a></li>
+            {% endif %}
           </ul>
           <h3 class="text-muted"><a href="/">Cloudfleet</a></h3>
         </div>
