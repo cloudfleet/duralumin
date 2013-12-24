@@ -18,4 +18,22 @@ hand-drawn trinketry.
 - parallax, cardboard-collage show of semi-transparent
 clouds, kites and airships
 
+Setup
+-----
+Assuming you have Node.js and RubyGems, first install the "global" tools.
 
+    npm install -g yo generator-webapp
+    gem install compass
+
+Then install the local tools.
+
+    npm install
+    bower install
+
+Run the development server.
+
+    grunt serve
+
+When you're happy, commit the changes in the dist/ folder.
+
+    grunt publish

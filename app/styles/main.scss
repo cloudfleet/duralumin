@@ -2,6 +2,9 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 
+/* colour scheme */
+$muted_text_col: #999999;
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -34,6 +37,12 @@ body {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
+    a {
+        color: $muted_text_col;
+        &:hover, &:focus{
+          text-decoration: none;
+        }
+    }
 }
 
 /* Custom page footer */
