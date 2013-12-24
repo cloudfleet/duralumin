@@ -1,12 +1,22 @@
 {% extends "duralumin/dj-base.html" %}
 {% load i18n %}
 {% block title %}{% trans "Home" %}{% endblock %}
-{% block content %}
+{% block full-content %}
 
-<p>{% blocktrans %}Hello cloudfleeters! Welcome to the landing page.
-Fancy, eh?{% endblocktrans %}</p>
+<div class="jumbotron">
+  <h1>Welcome, captain!</h1>
+  <p class="lead">Become the captain of your data.</p>
+  <p><a class="btn btn-lg btn-success" href="#">Get started!</a></p>
+</div>
 
-<p><a href="{% url 'dashboard' %}">{% blocktrans %}dashboard{% endblocktrans %}
-</a></p>
+<div class="row marketing">
+  <div class="col-lg-6">
+    <p>{% blocktrans %}Hello cloudfleeters! Welcome to the landing page.
+    Fancy, eh?{% endblocktrans %}</p>
+
+    <p><a href="{% url 'dashboard' %}">{% blocktrans %}dashboard{% endblocktrans %}
+    </a></p>
+  </div>
+</div>
 
 {% endblock %}

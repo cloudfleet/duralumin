@@ -3,11 +3,16 @@
 {% block title %}{% trans "Dashboard" %}{% endblock %}
 {% block content %}
 
-<p>{% blocktrans %}Hello, {% endblocktrans %} {{ user.username }}!
-{% blocktrans %}Welcome to your dashboard?{% endblocktrans %}</p>
+<div class="row marketing">
+  <div class="col-lg-6">
 
-<p>{% blocktrans %}Would you like to order a blimp?{% endblocktrans %}</p>
+    <p>{% blocktrans %}Hello, {% endblocktrans %} {{ user.username }}!
+    {% blocktrans %}Welcome to your dashboard!{% endblocktrans %}</p>
 
-<p> <a href="{% url 'auth_logout' %}">logout</a> </p>
+    <p>{% blocktrans %}Would you like to order a blimp?{% endblocktrans %}</p>
+
+    <p> <a href="{% url 'auth_logout' %}">logout</a> </p>
+  </div>
+</div>
 
 {% endblock %}
