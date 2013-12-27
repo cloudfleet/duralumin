@@ -314,6 +314,16 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
+            // this task is a hack until grunt-django enables
+            // rewriting templates so that app/bower_components
+            // can be used directly
+            devscripts: {
+                expand: true,
+                dot: true,
+                cwd: '<%= yeoman.dist %>/scripts',
+                dest: '.tmp/scripts/',
+                src: 'plugins.js'
+            },
             styles: {
                 expand: true,
                 dot: true,
@@ -413,6 +423,7 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
+        'copy:devscripts',
         'modernizr',
         //'rev', //needs grunt-django
         'usemin',
