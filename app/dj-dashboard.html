@@ -10,10 +10,21 @@
 
     <h4>Your fleet</h4>
 
-    <p>{% blocktrans %}<i>No vessels yet. Would you like to order one now?</i>{% endblocktrans %}</p>
+    {% if blimps %}
 
-    <p><a class="btn btn-lg btn-success" href="#">Order a blimp!</a></p>
+      <ul>
+      {% for blimp in blimps %}
+        <li>{{ blimp.subdomain }} <a href="{% url 'delete_blimp' blimp.id %}">delete</a></li>
+      {% endfor %}
+      </ul>
 
+    {% else %}
+
+      <p>{% blocktrans %}<i>No vessels yet. Would you like to order one now?</i>{% endblocktrans %}</p>
+
+      <p><a class="btn btn-lg btn-success" href="{% url 'order_blimp' %}">Order a blimp!</a></p>
+
+    {% endif %}
 
 </div>
 
