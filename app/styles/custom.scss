@@ -1,0 +1,38 @@
+@import 'sass-bootstrap/lib/bootstrap';
+
+// typography
+//-----------
+
+//http://www.google.com/fonts/#ChoosePlace:select/Collection:EB+Garamond
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+
+.header h3 a{
+  font-family: 'EB Garamond', serif;
+}
+
+
+// main
+//--------
+body {
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body > main { @extend .container;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// header
+//--------
+main > header { @extend .header;
+  h3 { @extend .text-muted;
+    a { color: black; }
+    span {
+      color: orange;
+    }
+  }
+
+}

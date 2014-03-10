@@ -28,8 +28,8 @@
       {% url 'home' as home %}
       {% url 'dashboard' as dashboard %}
 
-      <div class="container">
-        <div class="header">
+      <main>
+        <header>
           <ul class="nav nav-pills pull-right">
             <li{% if request.path == home %} class="active"{% endif %}>
               <a href="{% url 'home' %}">Home</a>
@@ -43,8 +43,8 @@
             <li><a href="{% url 'auth_login' %}">Log in</a></li>
             {% endif %}
           </ul>
-          <h3 class="text-muted"><a href="/">Cloudfleet</a></h3>
-        </div>
+          <h3 class="text-muted"><a href="/">CLOUD<span>FLEET</span></a></h3>
+        </header>
 
       {% block full-content %}
         <div class="row marketing">
@@ -59,7 +59,7 @@
           <p>Made with ♥ and open source by the Cloudfleet team.</p>
         </div>
 
-      </div>
+      </main>
 
 
 
