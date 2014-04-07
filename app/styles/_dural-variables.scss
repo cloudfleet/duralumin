@@ -6,7 +6,7 @@
 // Duralumin brand colors
 // -----------------------
 
-$duralumin-primary:         #e26826 !default;
+$duralumin-primary:         #e26826;
 
 
 // ---------------------
@@ -16,8 +16,18 @@ $duralumin-primary:         #e26826 !default;
 // Brand colors
 // -------------------------
 
-$brand-primary:         $duralumin-primary !default;
-$brand-success:         #5cb85c !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
-$brand-info:            #5bc0de !default;
+$brand-primary:         $duralumin-primary;
+$brand-success:         #5cb85c;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-info:            #5bc0de;
+
+// Typography
+//-----------
+
+$font-family-sans-serif:  "Open Sans", Helvetica, Arial, sans-serif;
+$font-family-serif:       "EB Garamond", Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-sans-serif;
+
+$headings-font-family:    $font-family-serif;
