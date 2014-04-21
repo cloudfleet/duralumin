@@ -9,6 +9,14 @@
   font-family: 'EB Garamond', serif;
 }
 
+// colours are set in _dural-variables.scss
+//-------------
+
+// layout - leave default Bootstrap for now
+//-------------
+
+// individual page components
+//----------------------------
 
 // main
 //--------
@@ -20,23 +28,42 @@ body {
 
 body > main { @extend .container;
   background-color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
 }
 
 // header
 //--------
 main > header { @extend .header;
+  background: url(../images/logo.png) no-repeat;
+  background-size: 3.8em auto;
   h3 { @extend .text-muted;
-    a {
-      color: #2f2f2f;
-      background: url(../images/logo.png) no-repeat;
-      background-size: 2.5em auto;
-      padding: 0.8em 0 0.9em 3em;
-    }
-    span {
-      color: $duralumin-primary;
-    }
+     margin-left: 1.5em;
+     padding: 21px;
+     a,a:hover,a:focus {
+       color: #2f2f2f;
+     }
+     span {
+          color: $duralumin-primary;
+     }
   }
 
+}
+
+// Responsive
+//-----------
+// phones
+@media (max-width: 767px) {
+  main > header {
+    border-bottom: 0;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  main > header { @extend .header;
+    h3 { @extend .text-muted;
+      margin-left: 2.5em;
+    }
+  }
 }
