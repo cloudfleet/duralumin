@@ -61,8 +61,8 @@ main > header { @extend .header;
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  main > header { @extend .header;
-    h3 { @extend .text-muted;
+  main > header { /*@extend .header;*/
+    h3 { /*@extend .text-muted;*/
       margin-left: 2.5em;
     }
   }
