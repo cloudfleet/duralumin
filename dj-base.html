@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<!doctype html>
+
+<!-- spire's base Django template -->
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="{% static 'duralumin/styles/main.css' %}">
+        <link rel="stylesheet" href="//brick.a.ssl.fastly.net/EB+Garamond:400,400i/Open+Sans:400,400i,700">
+
+        <script src="{% static 'duralumin/bower_components/modernizr/modernizr.js' %}"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+      {% url 'home' as home %}
+      {% url 'dashboard' as dashboard %}
+
+      <main>
+        <header>
+          <ul class="nav nav-pills pull-right">
+            <li{% if request.path == home %} class="active"{% endif %}>
+              <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li{% if request.path == dashboard %} class="active"{% endif %}>
+              <a href="{% url 'dashboard' %}">Dashboard</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'auth_logout' %}">Log out</a></li>
+            {% else %}
+            <li><a href="{% url 'auth_login' %}">Log in</a></li>
+            {% endif %}
+          </ul>
+          <h3 class="text-muted"><a href="/">CLOUD<span>FLEET</span></a></h3>
+        </header>
+
+      {% block full-content %}
+        <div class="row marketing">
+          <div class="col-lg-6">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+      {% endblock %}
+
+        <div class="footer">
+          <p>Made with ♥ and open source by the Cloudfleet team.</p>
+        </div>
+
+      </main>
+
+
+
+        <script src="{% static 'duralumin/bower_components/jquery/jquery.js' %}"></script>
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <script src="{% static 'duralumin/scripts/main.js' %}"></script>
+
+        <script src="{% static 'duralumin/scripts/plugins.js' %}"></script>
+
+</body>
+</html>
