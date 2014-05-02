@@ -22,6 +22,8 @@
 //--------
 body {
   background-color: white;
+  background-image: url("../images/bg_pattern.jpg");
+  background-repeat: repeat;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -35,8 +37,8 @@ body > main { @extend .container;
 // header
 //--------
 main > header { @extend .header;
-  background: url(../images/logo.png) no-repeat;
-  background-size: 3.8em auto;
+  /*background: url(../images/logo.png) no-repeat;
+  background-size: 3.8em auto;*/
   h3 { @extend .text-muted;
      margin-left: 1.5em;
      padding: 21px;
@@ -49,6 +51,48 @@ main > header { @extend .header;
   }
 
 }
+
+main > header {
+  position: relative;
+}
+
+main > header > div.main-logo {
+  height: 12em;
+  width: 12em;
+  position: absolute;
+  left: -6em;
+  top: -5px;
+  z-index: 100;
+}
+main > header > div.main-logo > img {
+  height: 12em;
+  width: 12em;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+main > header > nav {
+  font-family: $font-family-serif;
+  font-size: 1.2em;
+}
+
+.navbar-default #upper-navbar > .navbar-nav > li > a {
+  color: white;
+}
+
+#upper-navbar {
+  background-color: $text-color;
+  color: white;
+  padding-left: 6em;
+}
+
+#lower-navbar {
+  background-color: lightgray;
+}
+
 
 // Responsive
 //-----------
