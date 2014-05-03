@@ -56,6 +56,11 @@ main > header { @extend .header;
 
 }
 
+body > main {
+  padding: 0;
+  margin-top: 10px;
+}
+
 main > header {
   position: relative;
 }
