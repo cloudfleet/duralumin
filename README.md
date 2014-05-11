@@ -37,3 +37,22 @@ Run the development server.
 When you're happy, commit the changes in the dist/ folder.
 
     grunt publish
+
+Adding new dependencies
+-----------------------
+
+New JS or SASS/CSS packages can be added easily
+using [bower](http://bower.io/).
+
+    bower install --save <package>
+
+The only diff should now be seen in `bower.json` and the
+files get installed under the .gitignored `app/bower_components/`.
+
+To automatically link the package run
+
+    grunt bower-install
+
+but check this to make sure that it was done right and that any
+templates have been updated accordingly. If necessary set the path(s)
+manually.
