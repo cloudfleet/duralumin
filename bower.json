@@ -2,7 +2,7 @@
   "name": "duralumin",
   "private": true,
   "dependencies": {
-    "sass-bootstrap": "~3.0.0",
+    "bootstrap-sass-official": "~3.1.0",
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2"
   },

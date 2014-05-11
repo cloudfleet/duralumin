@@ -1,7 +1,10 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
 @import 'dural-variables';
-@import 'sass-bootstrap/lib/bootstrap';
+
+// bower:scss
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
+// endbower
 
 /* colour scheme */
 $muted_text_col: #999999;
@@ -101,4 +104,3 @@ body {
 }
 
 @import 'custom';
-@import 'font-awesome-4.0.3/scss/font-awesome';
