@@ -310,9 +310,18 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*'
+                        'styles/fonts/{,*/}*.*'
                     ]
+                }, {
+                    expand: true,
+                    dot: true,
+                    cwd: 'app/',
+                    // TODO: figure out location-agnostic way to copy fonts
+                    // - see how images are copied
+                    src: [
+                        'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
+                        'bower_components/fontawesome/fonts/*.*'],
+                    dest: '<%= yeoman.dist %>'
                 }]
             },
             // this task is a hack until grunt-django enables
