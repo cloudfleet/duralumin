@@ -69,8 +69,8 @@ main > header > div.main-logo {
   height: 12em;
   width: 12em;
   position: absolute;
-  left: -6em;
-  top: -5px;
+  left: -76px;
+  top: -6px;
   z-index: 100;
 }
 main > header > div.main-logo > img {
@@ -78,14 +78,21 @@ main > header > div.main-logo > img {
   width: 12em;
 }
 
+#nav-container
+{
+  padding: 0;
+}
+
 .navbar-brand {
   font-size: 1.5em;
   font-weight: bold;
+  padding-left: 3.5em;
 }
 
-main > header > nav {
+main > header > nav.navbar {
   font-family: $font-family-serif;
   font-size: 1.2em;
+  border: 0;
 }
 
 .navbar-default #upper-navbar > .navbar-nav > li > a {
