@@ -182,15 +182,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Automatically inject Bower components into the HTML file
-        'bower-install': {
-            app: {
-                html: '<%= yeoman.app %>/index.html',
-                ignorePath: '<%= yeoman.app %>/',
-                exclude: ['bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js']
-            }
-        },
-
         // Renames files for browser caching purposes
         rev: {
             dist: {
@@ -210,7 +201,7 @@ module.exports = function (grunt) {
         // additional tasks can operate on them
         useminPrepare: {
             options: {
-                dest: '<%= yeoman.dist %>',
+                dest: '<%= yeoman.dist %>'
                 // manually set steps without concat (needs grunt-django)
                 // flow: {
                 //     steps: { 'js': ['uglify'], 'css': ['cssmin'] },
@@ -312,16 +303,19 @@ module.exports = function (grunt) {
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*'
                     ]
-                }, {
+                }]
+            },
+            fonts: {
+                files: [{
                     expand: true,
                     dot: true,
-                    cwd: 'app/',
-                    // TODO: figure out location-agnostic way to copy fonts
-                    // - see how images are copied
+                    flatten: true,
+                    cwd: '<%= yeoman.app %>',
+                    // TODO: still a little hacky
                     src: [
-                        'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*.*',
-                        'bower_components/fontawesome/fonts/*.*'],
-                    dest: '<%= yeoman.dist %>'
+                        'bower_components/**/fonts/**/*.{eot,svg,ttf,woff}'
+                    ],
+                    dest: '<%= yeoman.app %>/styles/fonts'
                 }]
             },
             // this task is a hack until grunt-django enables
@@ -348,7 +342,7 @@ module.exports = function (grunt) {
         // reference in your app
         modernizr: {
             devFile: '<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
-            outputFile: '<%= yeoman.dist %>/bower_components/modernizr/modernizr.js',
+            outputFile: '<%= yeoman.dist %>/scripts/modernizr.js',
             files: [
                 '<%= yeoman.dist %>/scripts/{,*/}*.js',
                 '<%= yeoman.dist %>/styles/{,*/}*.css',
@@ -361,13 +355,16 @@ module.exports = function (grunt) {
         concurrent: {
             server: [
                 'compass:server',
+                'copy:fonts',
                 'copy:styles'
+
             ],
             test: [
                 'copy:styles'
             ],
             dist: [
                 'compass',
+                'copy:fonts',
                 'copy:styles',
                 'imagemin',
                 'svgmin'

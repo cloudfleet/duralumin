@@ -5,8 +5,43 @@
 //http://www.google.com/fonts/#ChoosePlace:select/Collection:EB+Garamond
 //@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: local('EB Garamond 12 Regular'), url(fonts/ebgaramond/400.woff) format('woff')
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 400;
+  src: local('EB Garamond 12 Italic'), url(fonts/ebgaramond/400i.woff) format('woff')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), url(fonts/opensans/400.woff) format('woff')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), url(fonts/opensans/400i.woff) format('woff')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), url(fonts/opensans/700.woff) format('woff')
+}
+
 // Font Awesome
-$fa-font-path: "/bower_components/fontawesome/fonts";
+$fa-font-path: "fonts" !default;
 @import 'fontawesome/scss/font-awesome';
 
 .header h3 a{
