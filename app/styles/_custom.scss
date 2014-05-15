@@ -71,6 +71,7 @@ body > main { @extend .container;
   background-color: white;
   padding-top: 0.8em;
   padding-bottom: 0.8em;
+  margin-top: 10px;
 }
 
 // header
@@ -78,6 +79,9 @@ body > main { @extend .container;
 main > header { @extend .header;
   /*background: url(../images/logo.png) no-repeat;
   background-size: 3.8em auto;*/
+  margin: -15px;
+  position: relative;
+  border-bottom: 0;
   h3 { @extend .text-muted;
      margin-left: 1.5em;
      padding: 21px;
@@ -91,26 +95,17 @@ main > header { @extend .header;
 
 }
 
-body > main {
-  padding: 0;
-  margin-top: 10px;
-}
-
-main > header {
-  position: relative;
-}
-
-main > header > div.main-logo {
+main > header > .main-logo {
   height: 12em;
   width: 12em;
   position: absolute;
   left: -76px;
   top: -6px;
   z-index: 100;
-}
-main > header > div.main-logo > img {
-  height: 12em;
-  width: 12em;
+  img {
+    height: 12em;
+    width: 12em;
+  }
 }
 
 #nav-container
@@ -157,13 +152,41 @@ button.navbar-toggle {
   background-color: lightgray;
 }
 
+.split-window {
+  padding: 3em 0;
+  border-top: 1px solid #e5e5e5; // we should split window instead
+}
+
+.box {
+  background: url("../images/basket.png") 102% 0% /18% no-repeat;
+  margin-right: -15px; // hacky - maybe set padding instead of margin on main
+}
+
+.airship {
+  background: url("../images/airship.png") 97% 0% /50% no-repeat,
+              url("../images/cloud.png") 0% 100% /50% no-repeat;
+  padding-bottom: 5em;
+}
+
 
 // Responsive
 //-----------
 // phones
 @media (max-width: 767px) {
-  main > header {
-    border-bottom: 0;
+  main > header > .main-logo {
+    left: -6px;
+  }
+
+  .navbar-brand {
+    padding-left: 4.5em;
+  }
+
+  #upper-navbar {
+    padding-left: 10em;
+  }
+
+  .container-fluid > .navbar-header {
+    //margin-left: 61px; // for the corner to go away
   }
 }
 
