@@ -85,7 +85,7 @@ main > header { @extend .header;
        color: #2f2f2f;
      }
      span {
-          color: $duralumin-primary;
+          color: $duralumin-orange;
      }
   }
 
@@ -120,7 +120,7 @@ main > header > div.main-logo > img {
 
 .navbar-brand {
   font-size: 1.5em;
-  font-weight: bold;
+  //font-weight: bold; // we don't have EB Garamond other than 400 normal/italic
   padding-left: 3.5em;
 }
 
@@ -134,10 +134,23 @@ main > header > nav.navbar {
   color: white;
 }
 
+.navbar-header {
+    background-color: $duralumin-black;
+}
+
+.navbar-colapse {
+    //box-shadow: none;
+}
+
+button.navbar-toggle {
+    background-color: white;
+}
+
 #upper-navbar {
   background-color: $text-color;
   color: white;
   padding-left: 6em;
+  background-color: #2F2F2F;
 }
 
 #lower-navbar {

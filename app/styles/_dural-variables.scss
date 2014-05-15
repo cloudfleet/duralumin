@@ -3,10 +3,18 @@
 // ---------------------
 
 
+// Duralumin typography
+//----------------------
+$duralumin-font-serif:  "EB Garamond", Georgia, "Times New Roman", Times, serif;
+$duralumin-font-sans:   "Open Sans", Helvetica, Arial, sans-serif;
+
 // Duralumin brand colors
 // -----------------------
 
-$duralumin-primary:         #e26826;
+$duralumin-orange:         #e26826;
+$duralumin-black:          #2F2F2F;
+$duralumin-darkgrey:       #B0B0B0;
+$duralumin-grey:           #E6E6E6;
 
 
 // ---------------------
@@ -16,7 +24,7 @@ $duralumin-primary:         #e26826;
 // Brand colors
 // -------------------------
 
-$brand-primary:         $duralumin-primary;
+$brand-primary:         $duralumin-orange;
 $brand-success:         #5cb85c;
 $brand-warning:         #f0ad4e;
 $brand-danger:          #d9534f;
@@ -25,8 +33,8 @@ $brand-info:            #5bc0de;
 // Typography
 //-----------
 
-$font-family-sans-serif:  "Open Sans", Helvetica, Arial, sans-serif;
-$font-family-serif:       "EB Garamond", Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif:  $duralumin-font-sans;
+$font-family-serif:       $duralumin-font-serif;
 $font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif;
 
