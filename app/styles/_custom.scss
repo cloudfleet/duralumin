@@ -139,8 +139,14 @@ main > header > nav.navbar {
     //box-shadow: none;
 }
 
-button.navbar-toggle {
-    background-color: white;
+.navbar-default button.navbar-toggle {
+    background-color: $duralumin-black;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    .icon-bar {
+       background-color: white;
+    }
 }
 
 #upper-navbar {
@@ -182,6 +188,12 @@ button.navbar-toggle {
 //-----------
 // phones
 @media (max-width: 767px) {
+
+  body > main {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
   main > header > .main-logo {
     left: -6px;
   }
@@ -199,8 +211,14 @@ button.navbar-toggle {
   }
 
   .container-fluid > .navbar-header {
-    //margin-left: 61px; // for the corner to go away
+    margin-left: 61px; // for the corner to go away
   }
+
+  .row{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 }
 
 /* Responsive: Portrait tablets and up */
@@ -209,5 +227,11 @@ button.navbar-toggle {
     h3 { /*@extend .text-muted;*/
       margin-left: 2.5em;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container, body>main {
+    max-width: 950px;
   }
 }
