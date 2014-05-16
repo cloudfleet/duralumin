@@ -118,7 +118,7 @@ main > header > .main-logo {
 .navbar-brand {
   font-size: 1.5em;
   font-weight: bold; // we don't have EB Garamond other than 400 normal/italic -- Does't matter - browser makes it bold
-  padding-left: 3.5em;
+  padding-left: 4.5em;
 }
 
 main > header > nav.navbar {
@@ -127,12 +127,20 @@ main > header > nav.navbar {
   border: 0;
 }
 
+.navbar-nav > li > a
+{
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
+
 .navbar-default #upper-navbar > .navbar-nav > li > a {
   color: white;
 }
 
 .navbar-header {
-    background-color: $duralumin-black;
+    background-color: white;
 }
 
 .navbar-colapse {
@@ -221,14 +229,6 @@ main > header > nav.navbar {
 
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  main > header { /*@extend .header;*/
-    h3 { /*@extend .text-muted;*/
-      margin-left: 2.5em;
-    }
-  }
-}
 
 @media screen and (min-width: 1024px) {
   .container, body>main {
