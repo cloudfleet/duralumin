@@ -82,6 +82,7 @@ main > header { @extend .header;
   background-color: white;
   margin-left: -15px;
   margin-right: -15px;
+  margin-bottom: 0px;
   position: relative;
   border-bottom: 0;
   div.navbar-brand.logo { @extend .text-muted;
@@ -125,6 +126,16 @@ main > header > .main-logo {
 {
   padding: 0;
 }
+
+.navbar
+{
+  margin-bottom: 0;
+}
+.navbar-brand
+{
+  height: auto;
+}
+
 
 .navbar-brand h3{
   font-size: 1.5em;
@@ -175,6 +186,17 @@ main > header > nav.navbar {
 
 #lower-navbar {
   background-color: lightgray;
+}
+
+body>main .jumbotron  {
+  border-radius: 0;
+  position: relative;
+
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+  background-color: $duralumin-grey;
+
 }
 
 
