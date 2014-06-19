@@ -86,16 +86,23 @@ main > header { @extend .header;
   position: relative;
   border-bottom: 0;
   div.navbar-brand.logo { @extend .text-muted;
-     margin-left: -15px;
-     margin-right: -15px;
+    margin-top: 0;
+    margin-bottom: 0;
      padding: 0px;
      padding-top: 5px;
      padding-left: 5em;
      height: auto;
     overflow-x: hidden;
     line-height: 1.1;
-     a,a:hover,a:focus {
+    float: none;
+    display: block;
+    h3 {
+      margin: 0;
+    }
+
+    a,a:hover,a:focus {
        color: #2f2f2f;
+      text-decoration: none;
      }
     h3 {
       display: inline-block;
@@ -106,6 +113,7 @@ main > header { @extend .header;
           color: $duralumin-orange;
      }
   }
+
 
 }
 
@@ -139,7 +147,7 @@ main > header > .main-logo {
 
 .navbar-brand h3{
   font-size: 1.5em;
-  font-weight: bold; // we don't have EB Garamond other than 400 normal/italic -- Does't matter - browser makes it bold
+  //font-weight: bold; // we don't have EB Garamond other than 400 normal/italic -- Does't matter - browser makes it bold
 }
 
 main > header > nav.navbar {
@@ -191,11 +199,59 @@ main > header > nav.navbar {
 body>main .jumbotron  {
   border-radius: 0;
   position: relative;
-
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 0;
   background-color: $duralumin-grey;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+
+  h1{
+    position:absolute;
+    padding-top: 10px;
+    top: 15px;
+    text-align: center;
+    width: 100%;
+    color: $duralumin-orange;
+    background: rgba(255,255,255,0.8);
+  }
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+
+  h3 > small {
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    letter-spacing: 0;
+  }
+
+  #call-to-action {
+    color: white;
+    padding: 1em;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    text-align: right;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+  #call-to-action-welcome
+  {
+    font-size: 2.5em;
+  }
+
+  #call-to-action-tagline
+  {
+    font-size: 0.9em;
+  }
+
 
 }
 
@@ -206,10 +262,29 @@ body>main .jumbotron  {
   margin-right: -15px;
   padding-left: 6em;
   padding-right: 6em;
+  padding-top: 4em;
+  padding-bottom: 5.5em;
 }
+
+
+
+.row.footer
+{
+  color: white;
+  background-color: #2f2f2f;
+  padding-top: 0.5em;
+  padding-bottom: 0;
+}
+
 
 .row.split{
   margin-top: 15px
+}
+
+.img-header {
+  height: 1.5em;
+  vertical-align: bottom;
+  margin-left: 1em;
 }
 
 
@@ -259,9 +334,40 @@ body>main .jumbotron  {
     padding-left: 0;
     padding-right: 0;
   }
+  body>main .jumbotron {
+    #call-to-action {
+      position: relative;
+      top: 0;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      min-width: 500px;
+      min-height: 100%;
+    }
+
+    #call-to-action-welcome
+    {
+      padding-left: 120px;
+    }
+    h3 > small {
+      display: inline-block;
+    }
+  }
 
 }
 
+@media (max-width: 350px) {
+  body>main .jumbotron {
+    #call-to-action-welcome
+    {
+      padding-left: 0;
+    }
+
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .container, body>main {
