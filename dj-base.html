@@ -53,19 +53,18 @@
               <!-- toggleable nav links, forms -->
               <div class="collapse navbar-collapse" id="upper-navbar">
                 <ul class="nav navbar-nav navbar-left">
-                  <li{% if request.path == home %} class="active"{% endif %}>
-                    <a href="{% url 'home' %}">HOME</a>
-                  </li>
-                  <li{% if request.path == dashboard %} class="active"{% endif %}>
-                    <a href="{% url 'dashboard' %}">DASHBOARD</a>
-                  </li>
+                  {% block navitems %}
+                    <li class="active">
+                      <a href="#">OVERRIDE</a>
+                    </li>
+                  {% endblock %}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  {% if user.is_authenticated %}
-                    <li><a href="{% url 'auth_logout' %}">LOG OUT</a></li>
-                  {% else %}
-                    <li><a href="{% url 'auth_login' %}">LOG IN</a></li>
-                  {% endif %}
+                  {% block navitems-login %}
+                    <li class="active">
+                      <a href="#">OVERRIDE LOG IN</a>
+                    </li>
+                  {% endblock %}
                 </ul>
               </div><!-- /.navbar-collapse -->
               <div class="collapse navbar-collapse" id="lower-navbar">
