@@ -2,7 +2,7 @@ Duralumin
 =========
 *Every Zeppelin's look and feel is defined by its awesome duralumin*
 
-Cloudfleet's UI.
+CloudFleet's UI.
 
 Design guidelines
 -----------------
